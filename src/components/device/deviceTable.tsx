@@ -59,23 +59,23 @@ const DeviceTable: React.FC<DeviceTableProps> = ({searchText }) => {
     {
       field: "id",
       headerName: "No.",
-      flex: 0.15,
+      flex: 0.1,
     },
     {
       field: "device_controller_id",
       headerName: "Controller",
-      flex: 0.45,
+      flex: 0.4,
     },
     {
       field: "reader_id",
       headerName: "Reader",
-      flex: 0.5,
+      flex: 0.6,
     },
-    {
-      field: "did",
-      headerName: "Device ID",
-      flex: 0.5,
-    },
+    // {
+    //   field: "did",
+    //   headerName: "Device ID",
+    //   flex: 0.5,
+    // },
   ];
 
 

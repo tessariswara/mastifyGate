@@ -15,7 +15,7 @@ const AddDevice = (
       manufacture: plant,
       ip_address: description,
       reader: readerID,
-      id: uid,
+      // id: uid,
     };
   
     const requestOptions = {
@@ -23,8 +23,10 @@ const AddDevice = (
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify([deviceData]),
+      body: JSON.stringify(deviceData),
     };
+
+    console.log("ini deviceData : ", deviceData)
   
     return fetch(apiPost, requestOptions)
       .then((response) => response.json())

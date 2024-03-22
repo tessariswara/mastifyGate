@@ -39,7 +39,7 @@ const DeviceAddModal: React.FC<AddModalProps> = ({
   const handleConfirmation = (confirmed: boolean, isDelete) => {
     if (confirmed) {
       console.log('Data saved successfully!');
-      AddDevice(apiPost, deviceData.serialNumber, deviceData.deviceName, deviceData.machineName, deviceData.plant, deviceData.description, deviceData.readerID, deviceData.uid)
+      AddDevice(apiPost, deviceData.serialNumber, deviceData.deviceName, deviceData.machineName, deviceData.plant, deviceData.description, deviceData.readerID)
       .then(() => {
         // window.location.reload();
       })
