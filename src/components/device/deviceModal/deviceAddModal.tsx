@@ -1,0 +1,72 @@
+import React, { useState, useEffect } from 'react';
+import DeviceModal from './deviceModal';
+import AddDevice from '../deviceApi/addDevice';
+
+interface AddModalProps {
+  apiUrl: string;
+  apiPost: string;
+  show: boolean;
+  handleClose: () => void;
+  deviceData: {
+    serialNumber: string;
+    deviceName: string;
+    machineName: string;
+    plant: string;
+    description: string;
+    readerID: string;
+    uid: string;
+  };
+  setDeviceData: React.Dispatch<React.SetStateAction<{
+    serialNumber: string;
+    deviceName: string;
+    machineName: string;
+    plant: string;
+    description: string;
+    readerID: string;
+    uid: string;
+  }>>;
+}
+
+const DeviceAddModal: React.FC<AddModalProps> = ({
+  apiUrl,
+  apiPost,
+  show,
+  handleClose,
+  deviceData,
+  setDeviceData,
+}) => {
+
+  const handleConfirmation = (confirmed: boolean, isDelete) => {
+    if (confirmed) {
+      console.log('Data saved successfully!');
+      AddDevice(apiPost, deviceData.serialNumber, deviceData.deviceName, deviceData.machineName, deviceData.plant, deviceData.description, deviceData.readerID, deviceData.uid)
+      .then(() => {
+        // window.location.reload();
+      })
+      .catch((error) => {
+        console.error('Error updating device:', error);
+      });
+
+    } else {
+      console.log('Save operation canceled.');
+    }
+  };
+
+  return (
+    <DeviceModal
+      title="Add Controller"
+      titleButton='Save'
+      apiUrl={apiUrl}
+      apiPost={apiPost}
+      show={show}
+      handleClose={handleClose}
+      handleConfirmation={handleConfirmation}
+      deviceData={deviceData}
+      setDeviceData={setDeviceData}
+      isEdit={false}
+      showDeleteButton={false}
+    />
+  );
+};
+
+export default DeviceAddModal;

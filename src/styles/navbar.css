@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px;
+    flex: 1;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.navbar-logo img {
+    width: 174px;
+}
+
+.navbar-nav ul {
+    display: flex;
+    list-style: none;
+    gap: 51px;
+}
+
+.navbar-user {
+    display: flex;
+    gap: 23px;
+    align-items: center;
+}
+
+.navbar-nav {
+    text-decoration: none;
+}
+
+.navbar-user-photo {
+    background-color: red;
+    width: 56px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 200px;
+}
+
+.navbar-user-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
